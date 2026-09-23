@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DECO LIFE - Jovan</title>
+    <title>DECO LIFE</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -24,61 +23,60 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        /* قسم الشعار في الأعلى */
+        /* بانر الشعار في الأعلى تماماً مثل الصورة المطلوبة */
         .top-header {
-            padding: 20px 15px 15px;
+            background-color: #06281e;
+            padding: 20px 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #06281e;
         }
         .brand-box {
+            background: #041d15;
+            padding: 12px 30px;
+            border-radius: 12px;
+            border: 1.5px solid #d4af37;
             display: flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(6, 40, 30, 0.95);
-            padding: 10px 25px;
-            border-radius: 50px;
-            border: 1.5px solid #d4af37;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
-        .brand-icon {
-            width: 36px;
-            height: 36px;
-            background: #d4af37;
+        .brand-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #d4af37 0%, #06281e 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #06281e;
-            font-weight: bold;
-            font-size: 18px;
+            border: 1px solid #d4af37;
         }
         .brand-name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
-            letter-spacing: 1px;
-            color: #fff;
+            letter-spacing: 1.5px;
+            color: #ffffff;
         }
-        /* قسم صورة المنزل / المعمل */
+        /* قسم صورة المنزل الكلاسيكي الفاخر */
         .image-section {
             width: 100%;
-            height: 250px;
+            height: 320px;
             overflow: hidden;
+            background-color: #06281e;
         }
         .image-section img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        /* قسم الأزرار */
+        /* قسم الأزرار والخلفية الخضراء الداكنة الموحدة */
         .buttons-section {
-            padding: 25px 20px;
+            padding: 30px 20px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
+            background-color: #06281e;
             flex-grow: 1;
-            justify-content: flex-start;
         }
         .btn {
             display: flex;
@@ -97,7 +95,7 @@
         }
         /* 1. زر اتصال بالمعمل (ذهبي) */
         .btn-gold {
-            background: linear-gradient(135deg, #f3e5ab, #d4af37);
+            background: linear-gradient(135deg, #f5e6b3, #d4af37);
             color: #06281e;
             border: none;
         }
@@ -141,26 +139,28 @@
             text-align: center;
             font-size: 12px;
             color: #7b9a90;
-            padding: 10px 0 20px;
+            padding: 15px 0 10px;
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <!-- الشعار واسم الشركة في الأعلى -->
+        <!-- بانر الشعار في الأعلى -->
         <div class="top-header">
             <div class="brand-box">
-                <div class="brand-icon">D</div>
+                <div class="brand-logo-icon">
+                    <svg width="22" height="22" fill="#d4af37" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
                 <div class="brand-name">DECO LIFE</div>
             </div>
         </div>
 
-        <!-- صورة المنزل الفاخر -->
+        <!-- صورة الفيلا الكلاسيكية الفخمة -->
         <div class="image-section">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Decolife Villa">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Decolife Luxury Villa">
         </div>
 
-        <!-- الأزرار الثلاثة -->
+        <!-- الأزرار على الخلفية الخضراء المطلوبة تماماً -->
         <div class="buttons-section">
             <!-- 1. اتصال بالمعمل -->
             <a href="tel:+9647500000000" class="btn btn-gold">
@@ -171,7 +171,7 @@
                 </div>
             </a>
 
-            <!-- 2. كتالوج المنتجات (PDF) -->
+            <!-- 2. كتالوج المنتجات -->
             <a href="https://www.dropbox.com/scl/fi/5h6uxfgf75iagejvgnhma/DECO-LIFE-SOVE-COMPANY.pdf?rlkey=k6qvgweyymlddnohqepijslaw&st=uydu7c1q&dl=0" class="btn btn-white" target="_blank">
                 <span class="arrow-icon" style="color: #06281e;">←</span>
                 <span style="flex-grow: 1; text-align: center;">كتالوج المنتجات</span>
@@ -190,7 +190,7 @@
             </a>
 
             <div class="footer">
-                جميع الحقوق محفوظة © 2026 - Decolife
+                Decolife - 2026 © جميع الحقوق محفوظة
             </div>
         </div>
     </div>
