@@ -1,23 +1,26 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DECO LIFE</title>
+    <!-- استدعاء خط يشبه الخط المستخدم في التصميم الأصلي -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            /* لون الخلفية الأخضر الداكن مطابق للصورة تماماً */
-            background-color: #02231b;
+            /* لون الخلفية الأخضر الداكن مطابق تماماً للصورة */
+            background-color: #032017;
+            font-family: 'Tajawal', sans-serif;
             display: flex;
             justify-content: center;
             min-height: 100vh;
@@ -26,17 +29,17 @@
         .container {
             width: 100%;
             max-width: 450px;
-            background-color: #02231b;
+            background-color: #032017;
             position: relative;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- الهيدر (الشعار والنص) --- */
+        /* --- الهيدر والشعار --- */
         .header-wrapper {
             position: absolute;
-            top: 30px;
+            top: 25px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -44,100 +47,74 @@
         }
 
         .header-box {
-            background-color: #042a22;
-            padding: 8px 30px;
+            background-color: #052c21;
+            padding: 5px 25px 5px 5px;
             display: flex;
             align-items: center;
             gap: 15px;
+            border-radius: 4px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
-        .logo-circle {
+        .logo-img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 1px solid #d6b05e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #021a14;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* رسم تقريبي للشعار الذهبي في الصورة */
-        .logo-circle::before {
-            content: "";
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 1px solid #d6b05e;
-            border-radius: 50%;
-            left: -5px;
-        }
-        .logo-circle::after {
-            content: "";
-            position: absolute;
-            width: 15px;
-            height: 35px;
-            border-left: 2px solid #d6b05e;
-            border-right: 2px solid #d6b05e;
-            right: 12px;
+            object-fit: contain;
+            background-color: #000; /* خلفية سوداء للشعار كما في الصورة */
         }
 
         .brand-text {
             color: #ffffff;
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: bold;
             letter-spacing: 1.5px;
             font-family: Arial, sans-serif;
         }
 
-        /* --- صورة الفيلا --- */
-        .hero-image {
+        /* --- صورة الفيلا الكلاسيكية --- */
+        .hero-image-container {
             width: 100%;
-            height: 400px;
+            height: 380px; /* ارتفاع الصورة */
             position: relative;
         }
 
-        .hero-image img {
+        .hero-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
-            display: block;
         }
 
-        /* تأثير التدرج لدمج الصورة مع الخلفية كما في الصورة */
-        .hero-image::after {
-            content: "";
+        /* هذا التدرج الأسود مهم جداً لدمج الصورة مع الخلفية الخضراء كما في التصميم */
+        .image-gradient-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 80px;
-            background: linear-gradient(to bottom, transparent, #02231b);
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, #032017);
         }
 
         /* --- قسم الأزرار --- */
         .buttons-section {
-            padding: 20px 25px;
+            padding: 10px 20px 40px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: -10px;
-            z-index: 2;
+            gap: 16px; /* المسافة بين الأزرار */
+            position: relative;
+            z-index: 5;
+            margin-top: -20px; /* رفع الأزرار قليلاً لتتداخل مع التدرج */
         }
 
         .btn {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 75px;
-            border-radius: 40px;
-            text-decoration: none;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center; /* توسيط النص بدقة */
+            align-items: center;
+            height: 65px;
+            border-radius: 35px; /* شكل الحبة الدائري */
+            text-decoration: none;
             transition: transform 0.2s;
         }
 
@@ -145,67 +122,66 @@
             transform: scale(0.98);
         }
 
-        /* توسيط النص بشكل مثالي */
         .btn-text {
-            width: 100%;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 20px;
+            font-weight: 700;
         }
 
-        /* السهم على اليسار */
         .btn-arrow {
             position: absolute;
-            left: 25px;
-            font-size: 26px;
-            font-weight: 300;
+            left: 20px;
+            font-size: 24px;
+            font-weight: normal;
         }
 
-        /* الدائرة على اليمين */
         .icon-circle {
             position: absolute;
-            right: 10px;
-            width: 55px;
-            height: 55px;
+            right: 6px;
+            width: 53px;
+            height: 53px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* 1. تصميم الزر الذهبي (اتصال بالمعمل) */
+        /* إعدادات أيقونات SVG */
+        .icon-circle svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* 1. الزر الذهبي (اتصال بالمعمل) */
         .btn-gold {
             background: linear-gradient(90deg, #fce196 0%, #cca142 100%);
-            color: #02231b;
+            color: #032017;
         }
-        .btn-gold .btn-arrow { color: #02231b; }
-        .btn-gold .icon-circle { background-color: #02231b; }
+        .btn-gold .btn-arrow { color: #032017; }
+        .btn-gold .icon-circle { background-color: #032017; }
+        .btn-gold .icon-circle svg { stroke: #cca142; }
 
-        /* 2. تصميم الزر الأبيض (كتالوج المنتجات) */
+        /* 2. الزر الأبيض (كتالوج المنتجات) */
         .btn-white {
             background-color: #ffffff;
-            color: #02231b;
+            color: #032017;
         }
-        .btn-white .btn-arrow { color: #02231b; }
-        .btn-white .icon-circle { background-color: #02231b; }
+        .btn-white .btn-arrow { color: #032017; }
+        .btn-white .icon-circle { background-color: #032017; }
+        .btn-white .icon-circle svg { stroke: #ffffff; }
 
-        /* 3. تصميم الزر الداكن (Instagram) */
+        /* 3. الزر الداكن (Instagram) */
         .btn-dark {
             background-color: transparent;
-            border: 1px solid #cca142;
+            border: 1.5px solid #cca142;
             color: #ffffff;
         }
         .btn-dark .btn-arrow { color: #ffffff; }
-        .btn-dark .icon-circle {
-            background-color: transparent;
-            border: 1px solid #cca142;
-        }
-        
-        /* إعدادات الأيقونات (SVG) */
-        svg {
-            width: 26px;
-            height: 26px;
-        }
+        .btn-dark .icon-circle { border: 1.5px solid #cca142; }
+        .btn-dark .icon-circle svg { stroke: #ffffff; }
         
         .english-font {
             font-family: Arial, sans-serif;
@@ -221,51 +197,54 @@
         <!-- الهيدر العلوي -->
         <div class="header-wrapper">
             <div class="header-box">
-                <div class="logo-circle"></div>
+                <!-- ⚠️ ضع رابط صورة شعارك الذهبي هنا بدلاً من هذا الرابط المؤقت ⚠️ -->
+                <img src="https://via.placeholder.com/50x50/000000/d6b05e?text=Logo" alt="Logo" class="logo-img">
                 <span class="brand-text">DECO LIFE</span>
             </div>
         </div>
 
         <!-- صورة الفيلا -->
-        <div class="hero-image">
+        <div class="hero-image-container">
+            <!-- ⚠️ ضع رابط صورة الفيلا الكلاسيكية الفخمة الخاصة بك هنا بدلاً من هذا الرابط ⚠️ -->
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Villa">
+            <div class="image-gradient-overlay"></div>
         </div>
 
         <!-- الأزرار -->
         <div class="buttons-section">
             
-            <!-- 1. زر اتصال بالمعمل -->
+            <!-- 1. اتصال بالمعمل -->
             <a href="tel:+9647500000000" class="btn btn-gold">
                 <span class="btn-arrow">←</span>
                 <span class="btn-text">اتصال بالمعمل</span>
                 <div class="icon-circle">
                     <!-- أيقونة الهاتف -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#cca142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                 </div>
             </a>
 
-            <!-- 2. زر كتالوج المنتجات -->
+            <!-- 2. كتالوج المنتجات -->
             <a href="https://www.dropbox.com/scl/fi/5h6uxfgf75iagejvgnhma/DECO-LIFE-SOVE-COMPANY.pdf?rlkey=k6qvgweyymlddnohqepijslaw&st=uydu7c1q&dl=0" target="_blank" class="btn btn-white">
                 <span class="btn-arrow">←</span>
                 <span class="btn-text">كتالوج المنتجات</span>
                 <div class="icon-circle">
-                    <!-- أيقونة الكتاب/الكتالوج -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- أيقونة الكتالوج -->
+                    <svg viewBox="0 0 24 24">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                     </svg>
                 </div>
             </a>
 
-            <!-- 3. زر انستغرام (برابط التيك توك الخاص بك) -->
+            <!-- 3. Instagram -->
             <a href="https://www.tiktok.com/@jovan___.0" target="_blank" class="btn btn-dark">
                 <span class="btn-arrow">←</span>
                 <span class="btn-text english-font">Instagram</span>
                 <div class="icon-circle">
                     <!-- أيقونة انستغرام -->
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
