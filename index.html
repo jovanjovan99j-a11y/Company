@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -10,44 +11,38 @@
             background-color: #06281e;
             color: #fff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        .main-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #06281e;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* قسم الشعار في الأعلى */
+        .top-header {
+            padding: 20px 15px 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 15px;
+            background-color: #06281e;
         }
-        .page-container {
-            width: 100%;
-            max-width: 420px;
-            background: #06281e;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .header-bg {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(rgba(6, 40, 30, 0.3), rgba(6, 40, 30, 0.95)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            padding-bottom: 25px;
-        }
-        .logo-container {
+        .brand-box {
             display: flex;
             align-items: center;
             gap: 12px;
-            background: rgba(6, 40, 30, 0.9);
-            padding: 12px 25px;
+            background: rgba(6, 40, 30, 0.95);
+            padding: 10px 25px;
             border-radius: 50px;
             border: 1.5px solid #d4af37;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        .logo-icon {
+        .brand-icon {
             width: 36px;
             height: 36px;
             background: #d4af37;
@@ -59,46 +54,60 @@
             font-weight: bold;
             font-size: 18px;
         }
-        .logo-text {
+        .brand-name {
             font-size: 20px;
             font-weight: bold;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             color: #fff;
         }
-        .content-box {
+        /* قسم صورة المنزل / المعمل */
+        .image-section {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* قسم الأزرار */
+        .buttons-section {
             padding: 25px 20px;
             display: flex;
             flex-direction: column;
             gap: 16px;
+            flex-grow: 1;
+            justify-content: flex-start;
         }
         .btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 22px;
+            padding: 16px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            transition: transform 0.2s, opacity 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
         }
         .btn:active {
             transform: scale(0.98);
         }
-        /* زر اتصال بالمعمل (ذهبي فخم) */
+        /* 1. زر اتصال بالمعمل (ذهبي) */
         .btn-gold {
             background: linear-gradient(135deg, #f3e5ab, #d4af37);
             color: #06281e;
             border: none;
         }
-        /* زر كتالوج المنتجات (أبيض بإطار ذهبي) */
+        /* 2. زر كتالوج المنتجات (أبيض بإطار ذهبي) */
         .btn-white {
             background: #ffffff;
             color: #06281e;
             border: 1.5px solid #d4af37;
         }
-        /* زر تيك توك (أخضر داكن فخم بإطار ذهبي) */
+        /* 3. زر تيك توك (أخضر داكن بإطار ذهبي) */
         .btn-dark {
             background: #041d15;
             color: #ffffff;
@@ -129,24 +138,30 @@
             font-weight: bold;
         }
         .footer {
-            margin-top: 15px;
+            text-align: center;
             font-size: 12px;
             color: #7b9a90;
-            padding-bottom: 10px;
+            padding: 10px 0 20px;
         }
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <!-- الهيدر مع شعار DECO LIFE -->
-        <div class="header-bg">
-            <div class="logo-container">
-                <div class="logo-icon">D</div>
-                <div class="logo-text">DECO LIFE</div>
+    <div class="main-container">
+        <!-- الشعار واسم الشركة في الأعلى -->
+        <div class="top-header">
+            <div class="brand-box">
+                <div class="brand-icon">D</div>
+                <div class="brand-name">DECO LIFE</div>
             </div>
         </div>
 
-        <div class="content-box">
+        <!-- صورة المنزل الفاخر -->
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Decolife Villa">
+        </div>
+
+        <!-- الأزرار الثلاثة -->
+        <div class="buttons-section">
             <!-- 1. اتصال بالمعمل -->
             <a href="tel:+9647500000000" class="btn btn-gold">
                 <span class="arrow-icon">←</span>
@@ -156,7 +171,7 @@
                 </div>
             </a>
 
-            <!-- 2. كتالوج المنتجات (رابط الـ PDF) -->
+            <!-- 2. كتالوج المنتجات (PDF) -->
             <a href="https://www.dropbox.com/scl/fi/5h6uxfgf75iagejvgnhma/DECO-LIFE-SOVE-COMPANY.pdf?rlkey=k6qvgweyymlddnohqepijslaw&st=uydu7c1q&dl=0" class="btn btn-white" target="_blank">
                 <span class="arrow-icon" style="color: #06281e;">←</span>
                 <span style="flex-grow: 1; text-align: center;">كتالوج المنتجات</span>
@@ -165,7 +180,7 @@
                 </div>
             </a>
 
-            <!-- 3. تيك توك الشخصي -->
+            <!-- 3. تيك توك -->
             <a href="https://www.tiktok.com/@jovan___.0" class="btn btn-dark" target="_blank">
                 <span class="arrow-icon">←</span>
                 <span style="flex-grow: 1; text-align: center;">تيك توك</span>
